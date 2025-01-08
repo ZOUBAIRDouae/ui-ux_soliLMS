@@ -1,0 +1,43 @@
+classDiagram
+
+class User {
+    + id
+    + name
+    + email
+    + password
+    + role
+}
+
+class Planning {
+    + id
+    + title
+    + description
+    + start_date
+    + end_date
+}
+
+class Session {
+    + id
+    + title
+    + description
+    + date
+    + start_time
+    + end_time
+}
+
+class Formation {
+    + id
+    + title
+    + description
+    + duration
+}
+
+
+User "1" -- "1..*" Planning
+User "1" --  "*" Session
+Planning "1" --  "*" Session
+Formation "1" -- "1..*" Session
+Formation "1" -- "1..*" Planning
+
+
+
