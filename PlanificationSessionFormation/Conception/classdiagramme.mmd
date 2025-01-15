@@ -2,42 +2,45 @@ classDiagram
 
 class User {
     + id
-    + name
+    + nom
     + email
-    + password
+    + mot_de_passe
     + role
 }
 
-class Planning {
+class Plan {
     + id
-    + title
+    + titre
     + description
-    + start_date
-    + end_date
 }
 
 class Session {
     + id
-    + title
-    + description
-    + date
-    + start_time
-    + end_time
+    + nom
+    + num_session
+    + semaine_session
+    + objectif_session
+    + sujet
+    + mini_projet
+    + evaluation
+    + date_debut
+    + date_fin
 }
 
 class Formation {
     + id
-    + title
+    + nom
     + description
-    + duration
+    + date_debut
+    + date_fin
 }
 
 
-User "1" -- "1..*" Planning
-User "1" --  "*" Session
-Planning "1" --  "*" Session
+User "1" -- "1..*" Plan  
+User "1" --  "1..*" Session
+Plan "1" --  "1..*" Session
 Formation "1" -- "1..*" Session
-Formation "1" -- "1..*" Planning
+Formation "1" -- "1..*" Plan
 
 
 
